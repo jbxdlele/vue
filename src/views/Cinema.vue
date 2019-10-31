@@ -95,10 +95,12 @@ export default {
   },
 
   methods: {
+    // 获取影城信息
     getlist() {
       this.$http
         .get(
-          `/ajax/cinemaList?day=2019-10-26&offset=0&limit=20&districtId=-1&lineId=-1&hallType=-1&brandId=-1&serviceId=-1&areaId=-1&stationId=-1&item=&updateShowDay=true&reqId=1572084469803&cityId=73`
+          // `/ajax/cinemaList?day=2019-10-26&offset=0&limit=20&districtId=-1&lineId=-1&hallType=-1&brandId=-1&serviceId=-1&areaId=-1&stationId=-1&item=&updateShowDay=true&reqId=1572084469803&cityId=73`
+          "http://127.0.0.1:8000/maoyan/cinemaList"
         )
         .then(res => {
           console.log(res);

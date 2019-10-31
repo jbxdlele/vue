@@ -143,13 +143,16 @@ export default {
     //   this.$toast(title);
     // }
 
+    // 正在热映
     gethit() {
       this.$http({
-        url: `/ajax/movieOnInfoList?token=`,
-        method: "GET",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
-        }
+        url:
+          // `/ajax/movieOnInfoList?token=`
+          "http://127.0.0.1:8000/maoyan/movieOnInfoList",
+        method: "GET"
+        // headers: {
+        //   "Content-Type": "application/x-www-form-urlencoded"
+        // }
       }).then(res => {
         console.log(res);
         this.hit = res.data.movieList;
@@ -158,14 +161,20 @@ export default {
         }
       });
     },
+    // 即将上映
     getrelease() {
-      this.$http.get(`/ajax/comingList?ci=73&token=&limit=10`).then(res => {
-        console.log(res);
-        this.release = res.data.coming;
-        for (var i = 0; i < this.release.length; i++) {
-          this.wh2.push(this.release[i].img.replace("w.h", "128.100"));
-        }
-      });
+      this.$http
+        .get(
+          // `/ajax/comingList?ci=73&token=&limit=10`
+          "http://127.0.0.1:8000/maoyan/comingList"
+        )
+        .then(res => {
+          console.log(res);
+          this.release = res.data.coming;
+          for (var i = 0; i < this.release.length; i++) {
+            this.wh2.push(this.release[i].img.replace("w.h", "128.100"));
+          }
+        });
     }
   }
 };
