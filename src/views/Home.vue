@@ -56,7 +56,7 @@
                 {{hit[index].showInfo}}
               </div>
             </div>
-            <div class="col-20">
+            <div class="col-20" @click="$router.push('/movie/1')">
               <div class="zhanwei"></div>
               <div class="zhanwei"></div>
               <div class="btn1" v-if="hit[index].showst==3">

@@ -49,6 +49,7 @@
 export default {
   data() {
     return {
+      active:"",
       user1: {},
       user: { name: "", pwd: "" }
     };
